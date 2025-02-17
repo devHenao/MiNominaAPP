@@ -1,0 +1,20 @@
+export '/backend/schema/util/schema_util.dart';
+
+export 'comunications_struct.dart';
+export 'employee_struct.dart';
+export 'list_training_employee_struct.dart';
+export 'name_dpto_struct.dart';
+export 'request_struct.dart';
+export 'user_struct.dart';
+export 'data_book_struct.dart';
+export 'data_city_struct.dart';
+export 'date_nomina_struct.dart';
+export 'detail_nomina_struct.dart';
+export 'list_closed_struct.dart';
+export 'list_current_struct.dart';
+export 'ls_disabilities_struct.dart';
+export 'ls_licenses_struct.dart';
+export 'personal_data_struct.dart';
+export 'type_request_struct.dart';
+export 'update_profile_struct.dart';
+export 'vacations_struct.dart';

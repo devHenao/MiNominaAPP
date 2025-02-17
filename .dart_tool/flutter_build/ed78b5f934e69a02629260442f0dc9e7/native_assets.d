@@ -1,0 +1,1 @@
+ C:\\Users\\Ofima\\Downloads\\mi_nomina\\mi_nomina\\.dart_tool\\flutter_build\\ed78b5f934e69a02629260442f0dc9e7\\native_assets.yaml: 
