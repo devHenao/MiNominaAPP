@@ -12,8 +12,10 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start Auth Group Code
 
 class AuthGroup {
-  static String getBaseUrl() =>
-      'https://us-central1-appemployees-1e950.cloudfunctions.net/appAuthEmployee/';
+  static String getBaseUrl({
+    String? enviroment = 'appemployeesprod',
+  }) =>
+      'https://us-central1-${enviroment}.cloudfunctions.net/appAuthEmployee/';
   static Map<String, String> headers = {};
   static LoginUserCall loginUserCall = LoginUserCall();
 }
@@ -23,8 +25,11 @@ class LoginUserCall {
     String? identification = '',
     String? email = '',
     String? password = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
-    final baseUrl = AuthGroup.getBaseUrl();
+    final baseUrl = AuthGroup.getBaseUrl(
+      enviroment: enviroment,
+    );
 
     final ffApiRequestBody = '''
 {
@@ -57,8 +62,9 @@ class LoginUserCall {
 class AppEmployeeGroup {
   static String getBaseUrl({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) =>
-      'https://us-central1-appemployees-1e950.cloudfunctions.net/appEmployee/';
+      'https://us-central1-${enviroment}.cloudfunctions.net/appEmployee/';
   static Map<String, String> headers = {
     'Authorization': 'Bearer [token]',
   };
@@ -85,9 +91,11 @@ class AppEmployeeGroup {
 class GetDetailEmployeeCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -112,9 +120,11 @@ class UpdateEmployeeCall {
   Future<ApiCallResponse> call({
     dynamic dataJson,
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     final data = _serializeJson(dataJson);
@@ -143,9 +153,11 @@ ${data}''';
 class TestCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -169,9 +181,11 @@ class TestCall {
 class GetListEmployeePayrollCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -198,9 +212,11 @@ class GetDetailEmployeePayrollCall {
     String? dateEnd = '',
     String? tipoDcto = '',
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     final ffApiRequestBody = '''
@@ -238,9 +254,11 @@ class GetDetailEmployeePayrollCall {
 class GetListTypesRequestsCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -271,9 +289,11 @@ class AddRequestsByUserCall {
     String? hourInit = '',
     String? hourEnd = '',
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -306,9 +326,11 @@ class AddRequestsByUserCall {
 class GetListRequestsByUserCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -332,9 +354,11 @@ class GetListRequestsByUserCall {
 class VacationEmployeeCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -358,9 +382,11 @@ class VacationEmployeeCall {
 class ReportVacationsCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -384,9 +410,11 @@ class ReportVacationsCall {
 class GetListTrainingEmployeeCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -410,9 +438,11 @@ class GetListTrainingEmployeeCall {
 class CommunicationCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -438,9 +468,11 @@ class ChangePasswordCall {
     String? oldpassword = '',
     String? newpassword = '',
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppEmployeeGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     final ffApiRequestBody = '''
@@ -475,8 +507,9 @@ class ChangePasswordCall {
 class AppMasterGroup {
   static String getBaseUrl({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) =>
-      'https://us-central1-appemployees-1e950.cloudfunctions.net/appMaster/';
+      'https://us-central1-${enviroment}.cloudfunctions.net/appMaster/';
   static Map<String, String> headers = {
     'Authorization': 'Bearer [token]',
   };
@@ -491,9 +524,11 @@ class AppMasterGroup {
 class GetListDeptoCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppMasterGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -518,9 +553,11 @@ class GetListCitiesCall {
   Future<ApiCallResponse> call({
     String? deparment = '',
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppMasterGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -544,9 +581,11 @@ class GetListCitiesCall {
 class GetListMaritalStatusCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppMasterGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -570,9 +609,11 @@ class GetListMaritalStatusCall {
 class GetListGeneralPersonCall {
   Future<ApiCallResponse> call({
     String? token = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final baseUrl = AppMasterGroup.getBaseUrl(
       token: token,
+      enviroment: enviroment,
     );
 
     return ApiManager.instance.makeApiCall(
@@ -599,6 +640,7 @@ class RecoveryPasswordCall {
   static Future<ApiCallResponse> call({
     String? nit = '',
     String? email = '',
+    String? enviroment = 'appemployeesprod',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -608,7 +650,7 @@ class RecoveryPasswordCall {
     return ApiManager.instance.makeApiCall(
       callName: 'RecoveryPassword',
       apiUrl:
-          'https://us-central1-appemployees-1e950.cloudfunctions.net/appEmployee/sendEmailRecoveryPassword',
+          'https://us-central1-${enviroment}.cloudfunctions.net/appEmployee/sendEmailRecoveryPassword',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
