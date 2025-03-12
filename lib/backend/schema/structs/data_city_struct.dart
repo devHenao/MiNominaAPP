@@ -10,11 +10,9 @@ class DataCityStruct extends BaseStruct {
     String? codigo,
     String? nomciud,
     String? nomdpto,
-    String? stadsincro,
   })  : _codigo = codigo,
         _nomciud = nomciud,
-        _nomdpto = nomdpto,
-        _stadsincro = stadsincro;
+        _nomdpto = nomdpto;
 
   // "CODIGO" field.
   String? _codigo;
@@ -37,18 +35,10 @@ class DataCityStruct extends BaseStruct {
 
   bool hasNomdpto() => _nomdpto != null;
 
-  // "STADSINCRO" field.
-  String? _stadsincro;
-  String get stadsincro => _stadsincro ?? '';
-  set stadsincro(String? val) => _stadsincro = val;
-
-  bool hasStadsincro() => _stadsincro != null;
-
   static DataCityStruct fromMap(Map<String, dynamic> data) => DataCityStruct(
         codigo: data['CODIGO'] as String?,
         nomciud: data['NOMCIUD'] as String?,
         nomdpto: data['NOMDPTO'] as String?,
-        stadsincro: data['STADSINCRO'] as String?,
       );
 
   static DataCityStruct? maybeFromMap(dynamic data) =>
@@ -58,7 +48,6 @@ class DataCityStruct extends BaseStruct {
         'CODIGO': _codigo,
         'NOMCIUD': _nomciud,
         'NOMDPTO': _nomdpto,
-        'STADSINCRO': _stadsincro,
       }.withoutNulls;
 
   @override
@@ -75,10 +64,7 @@ class DataCityStruct extends BaseStruct {
           _nomdpto,
           ParamType.String,
         ),
-        'STADSINCRO': serializeParam(
-          _stadsincro,
-          ParamType.String,
-        ),
+
       }.withoutNulls;
 
   static DataCityStruct fromSerializableMap(Map<String, dynamic> data) =>
@@ -98,11 +84,6 @@ class DataCityStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
-        stadsincro: deserializeParam(
-          data['STADSINCRO'],
-          ParamType.String,
-          false,
-        ),
       );
 
   @override
@@ -113,24 +94,21 @@ class DataCityStruct extends BaseStruct {
     return other is DataCityStruct &&
         codigo == other.codigo &&
         nomciud == other.nomciud &&
-        nomdpto == other.nomdpto &&
-        stadsincro == other.stadsincro;
+        nomdpto == other.nomdpto;
   }
 
   @override
   int get hashCode =>
-      const ListEquality().hash([codigo, nomciud, nomdpto, stadsincro]);
+      const ListEquality().hash([codigo, nomciud, nomdpto]);
 }
 
 DataCityStruct createDataCityStruct({
   String? codigo,
   String? nomciud,
   String? nomdpto,
-  String? stadsincro,
 }) =>
     DataCityStruct(
       codigo: codigo,
       nomciud: nomciud,
-      nomdpto: nomdpto,
-      stadsincro: stadsincro,
+      nomdpto: nomdpto
     );

@@ -12,7 +12,7 @@ Future downloadCertificate(
 ) async {
   // Add your function code here!
   final url =
-      'https://us-central1-appemployees-1e950.cloudfunctions.net/appEmployee/certificates/getLaborCertificate';
+      'https://us-central1-appemployeesprod.cloudfunctions.net/appEmployee/certificates/getLaborCertificate';
 
   try {
    final response = await http.get(Uri.parse(url), headers: {
