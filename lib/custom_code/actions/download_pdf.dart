@@ -50,7 +50,7 @@ Future downloadPdf(
             print("Archivo guardado en: $savedFilePath");
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Archivo guardado en: $savedFilePath'),
+                content: Text('Archivo guardado en descargas'),
                 backgroundColor: Color(0xFF39D2C0),
               ),
             );
@@ -78,7 +78,7 @@ Future downloadPdf(
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Archivo guardado en: $filePath'),
+            content: Text('Archivo guardado en descargas'),
             backgroundColor: Color(0xFF39D2C0),
           ),
         );

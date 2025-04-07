@@ -37,7 +37,7 @@ Future downloadVacationPdf(
           });
 
           if (savedFilePath != null) {
-            print("Archivo guardado en: $savedFilePath");
+            print("Archivo guardado en: descargas");
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Archivo guardado en: $savedFilePath'),
@@ -68,7 +68,7 @@ Future downloadVacationPdf(
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Archivo guardado en: $filePath'),
+            content: Text('Archivo guardado en descargas'),
             backgroundColor: Color(0xFF39D2C0),
           ),
         );
