@@ -3,6 +3,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/recovery_password/recovery_password_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import 'package:go_router/go_router.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -1062,25 +1063,51 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                               r'''$.data.cargo''',
                                             ).toString();
                                             safeSetState(() {});
-                                            GoRouter.of(context)
-                                                .prepareAuthEvent();
+                                            // 1. Obtener el token de la respuesta
+                                            final token = getJsonField(
+                                              (_model.apiResultLogin?.jsonBody ?? ''),
+                                              r'''$.data.token''',
+                                            ).toString();
+                                            
+                                            // 2. Actualizar el token en el estado global
+                                            FFAppState().token = token;
+                                            
+                                            // 3. Iniciar sesión con el token
                                             await authManager.signIn(
-                                              authenticationToken: getJsonField(
-                                                (_model.apiResultLogin
-                                                        ?.jsonBody ??
-                                                    ''),
-                                                r'''$.data.token''',
-                                              ).toString(),
+                                              authenticationToken: token,
                                             );
-                                            _navigate = () =>
-                                                context.goNamedAuth(
-                                                    'Home', context.mounted);
-                                            _model.apiResultdUser =
-                                                await AppEmployeeGroup
-                                                    .getDetailEmployeeCall
-                                                    .call(
-                                              token: FFAppState().token,
+                                            
+                                            // 4. Obtener los datos del usuario
+                                            _model.apiResultdUser = await AppEmployeeGroup
+                                                .getDetailEmployeeCall
+                                                .call(
+                                              token: token,
                                             );
+                                            
+                                            // 5. Configurar la navegación
+                                            _navigate = () {
+                                              if (context.mounted) {
+                                                // Usar el contexto raíz para la navegación
+                                                final rootContext = appNavigatorKey.currentContext;
+                                                if (rootContext != null) {
+                                                  // Navegar a la ruta Home usando el contexto raíz
+                                                  GoRouter.of(rootContext).go('/Home');
+                                                  
+                                                  // Como respaldo, si después de 1 segundo no se ha navegado, forzar la navegación
+                                                  Future.delayed(Duration(seconds: 1), () {
+                                                    if (context.mounted && ModalRoute.of(context)?.isCurrent == true) {
+                                                      // Si aún estamos en la pantalla de login, forzar navegación
+                                                      GoRouter.of(rootContext).go('/Home');
+                                                      // También intentar con navegación directa
+                                                      Navigator.of(context, rootNavigator: true).pushNamedAndRemoveUntil(
+                                                        'Home',
+                                                        (route) => false,
+                                                      );
+                                                    }
+                                                  });
+                                                }
+                                              }
+                                            };
 
                                             _shouldSetState = true;
                                             if ((_model.apiResultdUser
@@ -1147,7 +1174,19 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                             return;
                                           }
 
-                                          _navigate();
+                                          // Asegurarse de que la navegación se ejecute en el siguiente ciclo de eventos
+                                          Future.microtask(() {
+                                            // Siempre intentar navegar primero con _navigate
+                                            _navigate();
+                                            
+                                            // Como respaldo, si después de 1 segundo no se ha navegado, forzar la navegación
+                                            Future.delayed(Duration(seconds: 1), () {
+                                              if (context.mounted && ModalRoute.of(context)?.isCurrent == true) {
+                                                // Si aún estamos en la pantalla de login, forzar navegación
+                                                context.goNamedAuth('Home', context.mounted);
+                                              }
+                                            });
+                                          });
                                           if (_shouldSetState)
                                             safeSetState(() {});
                                         },

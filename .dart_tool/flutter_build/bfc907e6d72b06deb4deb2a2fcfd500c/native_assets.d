@@ -1,0 +1,1 @@
+ C:\\Ahenao\\Flutter\\Nomina_2\\MiNominaAPP\\.dart_tool\\flutter_build\\bfc907e6d72b06deb4deb2a2fcfd500c\\native_assets.yaml: 

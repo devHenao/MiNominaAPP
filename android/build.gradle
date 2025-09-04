@@ -24,10 +24,10 @@ subprojects {
         if (project.plugins.hasPlugin("com.android.application") ||
                 project.plugins.hasPlugin("com.android.library")) {
             project.android {
-                compileSdkVersion 34
+                compileSdkVersion 35
             }
         }
-        if (project.hasProperty('android')) {
+        if (project.hasProperty('android2.1.0')) {
                 project.android {
                     if (namespace == null) {
                         namespace project.group

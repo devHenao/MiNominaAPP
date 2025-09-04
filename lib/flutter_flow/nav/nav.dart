@@ -65,8 +65,13 @@ class AppStateNotifier extends ChangeNotifier {
   }
 
   void stopShowingSplashImage() {
-    showSplashImage = false;
-    notifyListeners();
+    if (showSplashImage) {
+      print('Ocultando splash screen');
+      showSplashImage = false;
+      notifyListeners();
+    } else {
+      print('Splash screen ya estaba oculto');
+    }
   }
 }
 

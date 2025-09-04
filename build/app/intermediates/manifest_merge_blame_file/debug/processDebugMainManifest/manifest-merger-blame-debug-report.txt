@@ -1,0 +1,299 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mycompany.minomina"
+4    android:versionCode="6"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:4:5-66
+14-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:4:22-64
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[:connectivity_plus] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\connectivity_plus\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-79
+15-->[:connectivity_plus] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\connectivity_plus\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:22-76
+16
+17    <queries>
+17-->[:file_picker] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\file_picker\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-13:15
+18        <intent>
+18-->[:file_picker] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\file_picker\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:8:9-12:18
+19            <action android:name="android.intent.action.GET_CONTENT" />
+19-->[:file_picker] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\file_picker\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:13-72
+19-->[:file_picker] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\file_picker\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:21-69
+20
+21            <data android:mimeType="*/*" />
+21-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:47:17-79
+22        </intent>
+23    </queries>
+24
+25    <permission
+25-->[androidx.core:core:1.15.0] C:\Users\Ofima\.gradle\caches\transforms-4\d7757a99f4f175507a2cb768ceaabde8\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+26        android:name="com.mycompany.minomina.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+26-->[androidx.core:core:1.15.0] C:\Users\Ofima\.gradle\caches\transforms-4\d7757a99f4f175507a2cb768ceaabde8\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+27        android:protectionLevel="signature" />
+27-->[androidx.core:core:1.15.0] C:\Users\Ofima\.gradle\caches\transforms-4\d7757a99f4f175507a2cb768ceaabde8\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+28
+29    <uses-permission android:name="com.mycompany.minomina.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+29-->[androidx.core:core:1.15.0] C:\Users\Ofima\.gradle\caches\transforms-4\d7757a99f4f175507a2cb768ceaabde8\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+29-->[androidx.core:core:1.15.0] C:\Users\Ofima\.gradle\caches\transforms-4\d7757a99f4f175507a2cb768ceaabde8\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+30
+31    <application
+31-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:7:5-60:19
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.15.0] C:\Users\Ofima\.gradle\caches\transforms-4\d7757a99f4f175507a2cb768ceaabde8\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+33        android:debuggable="true"
+34        android:extractNativeLibs="true"
+35        android:icon="@mipmap/ic_launcher"
+35-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:10:9-43
+36        android:label="Mi nomina" >
+36-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:8:9-34
+37        <activity
+37-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:12:9-50:20
+38            android:name="com.mycompany.minomina.MainActivity"
+38-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:13:13-41
+39            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+39-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:17:13-163
+40            android:exported="true"
+40-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:14:13-36
+41            android:hardwareAccelerated="true"
+41-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:18:13-47
+42            android:launchMode="singleTop"
+42-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:15:13-43
+43            android:theme="@style/LaunchTheme"
+43-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:16:13-47
+44            android:windowSoftInputMode="adjustResize" >
+44-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:19:13-55
+45
+46            <!--
+47                 Specifies an Android theme to apply to this Activity as soon as
+48                 the Android process has started. This theme is visible to the user
+49                 while the Flutter UI initializes. After that, this theme continues
+50                 to determine the Window background behind the Flutter UI.
+51            -->
+52            <meta-data
+52-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:24:13-27:17
+53                android:name="io.flutter.embedding.android.NormalTheme"
+53-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:25:15-70
+54                android:resource="@style/NormalTheme" />
+54-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:26:15-52
+55            <!--
+56                 Displays an Android View that continues showing the launch screen
+57                 Drawable until Flutter paints its first frame, then this splash
+58                 screen fades out. A splash screen is useful to avoid any visual
+59                 gap between the end of Android's launch screen and the painting of
+60                 Flutter's first frame.
+61            -->
+62            <meta-data
+62-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:33:13-36:17
+63                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+63-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:34:15-79
+64                android:resource="@drawable/launch_background" />
+64-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:35:15-61
+65
+66            <intent-filter>
+66-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:37:13-40:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:38:17-68
+67-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:38:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:39:17-76
+69-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:39:27-74
+70            </intent-filter>
+71            <!-- Deep linking -->
+72            <meta-data
+72-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:42:13-90
+73                android:name="flutter_deeplinking_enabled"
+73-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:42:24-66
+74                android:value="true" />
+74-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:42:67-87
+75
+76            <intent-filter android:autoVerify="true" >
+76-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:43:13-48:29
+76-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:43:28-53
+77                <action android:name="android.intent.action.VIEW" />
+77-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:44:17-69
+77-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:44:25-66
+78
+79                <category android:name="android.intent.category.DEFAULT" />
+79-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:45:17-76
+79-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:45:27-73
+80                <category android:name="android.intent.category.BROWSABLE" />
+80-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:46:17-78
+80-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:46:27-75
+81
+82                <data
+82-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:47:17-79
+83                    android:host="minomina.com"
+83-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:47:49-76
+84                    android:scheme="minomina" />
+84-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:47:23-48
+85            </intent-filter>
+86        </activity>
+87
+88        <!--
+89             Don't delete the meta-data below.
+90             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+91        -->
+92        <meta-data
+92-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:54:9-56:33
+93            android:name="flutterEmbedding"
+93-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:55:13-44
+94            android:value="2" />
+94-->C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\android\app\src\main\AndroidManifest.xml:56:13-30
+95
+96        <provider
+96-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:9-17:20
+97            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+97-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:10:13-82
+98            android:authorities="com.mycompany.minomina.flutter.image_provider"
+98-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:11:13-74
+99            android:exported="false"
+99-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:12:13-37
+100            android:grantUriPermissions="true" >
+100-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:13:13-47
+101            <meta-data
+101-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:14:13-16:75
+102                android:name="android.support.FILE_PROVIDER_PATHS"
+102-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:15:17-67
+103                android:resource="@xml/flutter_image_picker_file_paths" />
+103-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:16:17-72
+104        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+105        <service
+105-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:19:9-31:19
+106            android:name="com.google.android.gms.metadata.ModuleDependencies"
+106-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:20:13-78
+107            android:enabled="false"
+107-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:21:13-36
+108            android:exported="false" >
+108-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:22:13-37
+109            <intent-filter>
+109-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:24:13-26:29
+110                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+110-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:25:17-94
+110-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:25:25-91
+111            </intent-filter>
+112
+113            <meta-data
+113-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:28:13-30:36
+114                android:name="photopicker_activity:0:required"
+114-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:29:17-63
+115                android:value="" />
+115-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:30:17-33
+116        </service>
+117
+118        <provider
+118-->[:open_file_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\open_file_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:9-19:20
+119            android:name="com.crazecoder.openfile.FileProvider"
+119-->[:open_file_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\open_file_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:10:13-64
+120            android:authorities="com.mycompany.minomina.fileProvider.com.crazecoder.openfile"
+120-->[:open_file_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\open_file_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:11:13-88
+121            android:exported="false"
+121-->[:open_file_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\open_file_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:12:13-37
+122            android:grantUriPermissions="true"
+122-->[:open_file_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\open_file_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:13:13-47
+123            android:requestLegacyExternalStorage="true" >
+123-->[:open_file_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\open_file_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:14:13-56
+124            <meta-data
+124-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:14:13-16:75
+125                android:name="android.support.FILE_PROVIDER_PATHS"
+125-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:15:17-67
+126                android:resource="@xml/filepaths" />
+126-->[:image_picker_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\image_picker_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:16:17-72
+127        </provider>
+128
+129        <activity
+129-->[:url_launcher_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:8:9-11:74
+130            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+130-->[:url_launcher_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:13-74
+131            android:exported="false"
+131-->[:url_launcher_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:10:13-37
+132            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+132-->[:url_launcher_android] C:\Ahenao\Flutter\Nomina_2\MiNominaAPP\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:11:13-71
+133
+134        <provider
+134-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\67e7c2b27296fa7a443aca41487b227b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+135            android:name="androidx.startup.InitializationProvider"
+135-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\67e7c2b27296fa7a443aca41487b227b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+136            android:authorities="com.mycompany.minomina.androidx-startup"
+136-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\67e7c2b27296fa7a443aca41487b227b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+137            android:exported="false" >
+137-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\67e7c2b27296fa7a443aca41487b227b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+138            <meta-data
+138-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\67e7c2b27296fa7a443aca41487b227b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+139                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+139-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\67e7c2b27296fa7a443aca41487b227b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+140                android:value="androidx.startup" />
+140-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\67e7c2b27296fa7a443aca41487b227b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+141            <meta-data
+141-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Ofima\.gradle\caches\transforms-4\80a0bfed2d8af05a3fbdd7a4a05d863e\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+142                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+142-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Ofima\.gradle\caches\transforms-4\80a0bfed2d8af05a3fbdd7a4a05d863e\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+143                android:value="androidx.startup" />
+143-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Ofima\.gradle\caches\transforms-4\80a0bfed2d8af05a3fbdd7a4a05d863e\transformed\jetified-lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+144            <meta-data
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+145                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+146                android:value="androidx.startup" />
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+147        </provider>
+148
+149        <uses-library
+149-->[androidx.window:window:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\f595407d32305a2fff4cdd12be6eda86\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+150            android:name="androidx.window.extensions"
+150-->[androidx.window:window:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\f595407d32305a2fff4cdd12be6eda86\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+151            android:required="false" />
+151-->[androidx.window:window:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\f595407d32305a2fff4cdd12be6eda86\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+152        <uses-library
+152-->[androidx.window:window:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\f595407d32305a2fff4cdd12be6eda86\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+153            android:name="androidx.window.sidecar"
+153-->[androidx.window:window:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\f595407d32305a2fff4cdd12be6eda86\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+154            android:required="false" />
+154-->[androidx.window:window:1.2.0] C:\Users\Ofima\.gradle\caches\transforms-4\f595407d32305a2fff4cdd12be6eda86\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+155
+156        <receiver
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+157            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+157-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+158            android:directBootAware="false"
+158-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+159            android:enabled="true"
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+160            android:exported="true"
+160-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+161            android:permission="android.permission.DUMP" >
+161-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+162            <intent-filter>
+162-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+163                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+163-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+163-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+164            </intent-filter>
+165            <intent-filter>
+165-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+166                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+166-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+166-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+167            </intent-filter>
+168            <intent-filter>
+168-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+169                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+169-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+169-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+170            </intent-filter>
+171            <intent-filter>
+171-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+172                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+172-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+172-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Ofima\.gradle\caches\transforms-4\7dc477b5832894c268b1e6064f908085\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+173            </intent-filter>
+174        </receiver>
+175    </application>
+176
+177</manifest>

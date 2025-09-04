@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:go_router/go_router.dart';
+
+import 'flutter_flow/nav/nav.dart';
 
 import 'auth/custom_auth/custom_auth_user_provider.dart';
 
@@ -12,18 +15,27 @@ import 'flutter_flow/internationalization.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  GoRouter.optionURLReflectsImperativeAPIs = true;
-  usePathUrlStrategy();
+  
+  try {
+    // Inicialización básica
+    GoRouter.optionURLReflectsImperativeAPIs = true;
+    usePathUrlStrategy();
 
-  await FlutterFlowTheme.initialize();
+    // Inicialización del tema
+    await FlutterFlowTheme.initialize();
 
-  final appState = FFAppState(); // Initialize FFAppState
-  await appState.initializePersistedState();
+    // Inicialización del estado
+    final appState = FFAppState();
+    await appState.initializePersistedState();
 
-  runApp(ChangeNotifierProvider(
-    create: (context) => appState,
-    child: MyApp(),
-  ));
+    runApp(ChangeNotifierProvider(
+      create: (context) => appState,
+      child: MyApp(),
+    ));
+  } catch (e, stackTrace) {
+    print('Error durante la inicialización: $e');
+    print('Stack trace: $stackTrace');
+  }
 }
 
 class MyApp extends StatefulWidget {
@@ -56,18 +68,82 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    
+    try {
+      _appStateNotifier = AppStateNotifier.instance;
+      _router = createRouter(_appStateNotifier);
+      
+      // Configurar el stream de autenticación
+      userStream = miNominaAuthUserStream().asBroadcastStream();
+      
+      // Suscripción al stream de autenticación
+      final subscription = userStream.listen(
+        (user) {
+          print('Usuario actualizado: ${user.uid}');
+          _appStateNotifier.update(user);
+          
+          // Ocultar splash screen después de la autenticación
+          _appStateNotifier.stopShowingSplashImage();
+          
+          // Navegar basado en el estado de autenticación
+          if (user.loggedIn) {
+            print('Usuario autenticado, navegando a /Home');
+            // Usar el contexto raíz para la navegación
+            final rootContext = appNavigatorKey.currentContext;
+            if (rootContext != null) {
+              GoRouter.of(rootContext).go('/Home');
+            }
+          } else {
+            print('Usuario no autenticado, navegando a /authLogin');
+            _router.go('/authLogin');
+          }
+        },
+        onError: (error) {
+          print('Error en el stream de autenticación: $error');
+          _appStateNotifier.stopShowingSplashImage();
+          _router.go('/authLogin');
+        },
+        onDone: () {
+          print('Stream de autenticación completado');
+          _appStateNotifier.stopShowingSplashImage();
+        }
+      );
 
-    _appStateNotifier = AppStateNotifier.instance;
-    _router = createRouter(_appStateNotifier);
-    userStream = miNominaAuthUserStream()
-      ..listen((user) {
-        _appStateNotifier.update(user);
+      // Timeout para asegurar que el splash no se quede para siempre
+      Future.delayed(Duration(seconds: 3), () {
+        if (_appStateNotifier.showSplashImage) {
+          print('Timeout del splash screen');
+          _appStateNotifier.stopShowingSplashImage();
+          if (!_appStateNotifier.loggedIn) {
+            _router.go('/authLogin');
+          }
+        }
       });
-
-    Future.delayed(
-      Duration(milliseconds: isWeb ? 0 : 3000),
-      () => _appStateNotifier.stopShowingSplashImage(),
-    );
+      
+      // Navegación inicial basada en el estado de autenticación
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          if (_appStateNotifier.loggedIn) {
+            print('Navegación inicial a /Home');
+            _router.go('/Home');
+          } else {
+            print('Navegación inicial a /authLogin');
+            _router.go('/authLogin');
+          }
+        }
+      });
+      
+      // Cancelar la suscripción cuando el widget se desmonte
+      subscription.onDone(() {
+        subscription.cancel();
+      });
+      
+    } catch (e, stackTrace) {
+      print('Error en initState: $e');
+      print('Stack trace: $stackTrace');
+      _appStateNotifier.stopShowingSplashImage();
+      _router.go('/authLogin');
+    }
   }
 
   void setLocale(String language) {
@@ -83,6 +159,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Mi Nómina',
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
